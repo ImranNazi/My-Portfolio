@@ -297,3 +297,73 @@ form .btn2 {
   font-weight: 300;
   margin-top: 20px;
 }
+nav .fa-solid {
+  display: none;
+}
+/*css for small screen!!*/
+@media only screen and (max-width: 600px) {
+  #header {
+    background-image: none;
+  }
+
+  .header-text {
+    margin-top: 20vh;
+  }
+  nav .fa-solid {
+    display: block;
+    font-size: 25px;
+  }
+  nav ul {
+    background: #ff004f;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 100vh;
+    padding: top 50px;
+  }
+  nav ul li {
+    display: block;
+    margin: 25px;
+  }
+  /*fix this*/
+  .header-text h1 {
+    font-size: 68px;
+  }
+  nav ul .fa-solid {
+    position: absolute;
+    top: 12px;
+    left: 25px;
+    cursor: pointer;
+  }
+  nav ul {
+    padding-top: 40px;
+    right: -200px;
+    z-index: 2;
+    transition: right 0.5s;
+  }
+  .sub-title {
+    font: size 2000px;
+  }
+  .about-col-1,
+  .about-col-2 {
+    flex-basis: 100%;
+  }
+  .about-col-1 {
+    margin-bottom: 30px;
+  }
+  .about-col-2 {
+    font-size: 14px;
+  }
+  .tab-links {
+    font-size: 16px;
+    margin-right: 20px;
+  }
+  .contact-left,
+  .contact-right {
+    flex-basis: 100%;
+  }
+  .copyright {
+    font-size: 14px;
+  }
+}
