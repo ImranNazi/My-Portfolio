@@ -17,7 +17,7 @@ body {
 #header {
   width: 100%;
   height: 100vh;
-  background-image: url(images/background.png);
+  /* background-image: url(images/background.png); */
   background-size: cover;
   background-position: center;
 }
@@ -26,6 +26,16 @@ body {
   padding: 10px 10%;
 }
 
+.header-text #x,
+#y,
+#z {
+  font-size: 14vh;
+}
+.header-text #y {
+  text-align: center;
+}
+.header-text {
+}
 nav {
   display: flex;
   align-items: center;
@@ -330,6 +340,19 @@ nav .fa-solid {
   .header-text h1 {
     font-size: 68px;
   }
+
+  .header-text #x,
+  #y,
+  #z {
+    font-size: 7vh;
+    text-align: center;
+  }
+  .header-text #x {
+    font-size: 40px;
+  }
+  .header-text #z {
+    line-height: 60px;
+  }
   nav ul .fa-solid {
     position: absolute;
     top: 12px;
@@ -350,6 +373,7 @@ nav .fa-solid {
     flex-basis: 100%;
   }
   .about-col-1 {
+    margin-top: 257px;
     margin-bottom: 30px;
   }
   .about-col-2 {
@@ -366,4 +390,14 @@ nav .fa-solid {
   .copyright {
     font-size: 14px;
   }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#msgg {
+  color: #61b752;
+  margin-top: -40px;
+  display: block;
 }

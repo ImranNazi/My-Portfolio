@@ -24,18 +24,19 @@
           <img src="images/logo.png" class="logo" alt="" />
           <ul id="sidemenu">
             <li>
-              <a href="#">Home</a>
+              <a href="#header">Home</a>
             </li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
             <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
           </ul>
           <i class="fa-solid fa-bars" onclick="openmenu()"></i>
         </nav>
         <div class="header-text">
-          <p>UI/UX Designer</p>
-          <h1>Hi,I'm <span>Imran</span> <br />Nazi from India</h1>
+          <p id="x">Software Developer</p>
+          <h1 id="y">Hi, I'm <span>Imran</span> <br /></h1>
+          <h1 id="z">Nazi from India</h1>
         </div>
       </div>
     </div>
@@ -44,19 +45,17 @@
       <div class="container">
         <div class="row">
           <div class="about-col-1">
-            <img src="images/user.png" alt="" />
+            <img src="images/User.jpeg" alt="" />
           </div>
           <div class="about-col-2">
             <h1 class="sub-title">About Me</h1>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
-              minus dignissimos mollitia unde, earum tempora sequi obcaecati ex,
-              quasi vel quia asperiores! Sequi quam laborum vitae odio, ullam
-              labore exercitationem. Iusto porro aliquid quae illum, error
-              quisquam explicabo at in accusamus doloribus. Dicta, consequatur
-              enim eveniet inventore ullam error eos, perferendis cupiditate
-              nulla obcaecati aliquid aliquam aperiam magnam! Labore,
-              perferendis.
+              Aspiring developer eager to create visually appealing and
+              intuitive websites, with a passion for crafting delightful user
+              experiences. <br />
+              I possess strong proficiency in html,css and js alongwith various
+              modern framework and libraries. this enables me to integrate
+              interactive features seamlessly.
             </p>
             <div class="tab-titles">
               <p class="tab-links active-link" onclick="opentab('skills')">
@@ -72,8 +71,8 @@
               <ul>
                 <!--update skills here...-->
                 <li>
-                  <span> UI/UX </span>
-                  <br />Designing Web/App interfaces
+                  <span> Front-End</span>
+                  <br />HTML, CSS, JavaScript, ReactJS
                 </li>
 
                 <li>
@@ -187,7 +186,7 @@
             <a href="images/my-cv.pdf" download class="btn btn2">Download cv</a>
           </div>
           <div class="contact-right">
-            <form action="">
+            <form action="" name="submit-to-google-sheet">
               <input
                 type="text"
                 name="Name"
@@ -209,6 +208,7 @@
                 placeholder="your message"
               ></textarea>
               <button type="submit" class="btn btn2">submit</button>
+              <span id="msgg">hello</span>
             </form>
           </div>
         </div>
@@ -222,5 +222,24 @@
       </p>
     </div>
     <script src="script.js"></script>
+    <script>
+      const scriptURL =
+        "https://script.google.com/macros/s/AKfycbwvXeGO5GXUfs9RApDalbInmYAJfLyKu0U0JQ3Ih3mOcIZxWqb_k9czesA9l-3_tvbd/exec";
+      const form = document.forms["submit-to-google-sheet"];
+      const msg = document.getElementById("msgg");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => {
+            msg.innerHTML = "message sent successfully";
+            setTimeout(function () {
+              msg.innerHTML = "";
+            }, 2000);
+            form.reset();
+          })
+          .catch((error) => console.error("Error!", error.message));
+      });
+    </script>
   </body>
 </html>

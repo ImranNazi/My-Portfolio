@@ -18,3 +18,4 @@ function openmenu() {
 function closemenu() {
   sidemenu.style.right = "-200px";
 }
+//message...
